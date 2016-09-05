@@ -31,3 +31,12 @@ PRODUCT_NAME := cm_land
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi 3S
 TARGET_VENDOR := Xiaomi
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Use the latest approved GMS identifiers unless running a signed build
+ifneq ($(SIGN_BUILD),true)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT=Xiaomi/land/land:6.0.1/MMB29M/V7.5.5.0.MALCNDE:user/release-keys \
+    PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M V7.5.5.0.MALCNDE release-keys"
+endif

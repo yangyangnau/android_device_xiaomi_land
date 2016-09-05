@@ -73,5 +73,14 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x283379c00
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# Recovery
+#TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
 # inherit from the proprietary version
 -include vendor/xiaomi/land/BoardConfigVendor.mk
