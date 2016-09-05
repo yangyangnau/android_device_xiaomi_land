@@ -18,9 +18,6 @@ DEVICE_PATH := device/xiaomi/land
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-#USE_CAMERA_STUB := true
-#ARCH_ARM_HAVE_TLS_REGISTER := true
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -62,7 +59,6 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_CONFIG := cyanogenmod_land_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_PREBUILT_KERNEL := device/xiaomi/land/kernel
 
 # Filesystem
 # 128K
