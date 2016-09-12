@@ -39,13 +39,18 @@ $(call inherit-product, build/target/product/full.mk)
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.qcom.sh
-
+    init.qcom.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.sensors.sh \
+    init.qcom.syspart_fixup.sh
+    
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.qcom.factory.rc \
+    init.recovery.hardware.rc \
     ueventd.qcom.rc
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.recovery.hardware.rc:root/init.recovery.hardware.rc
+#PRODUCT_COPY_FILES += \
 
