@@ -53,8 +53,8 @@ on mmi
     #       The follow setting come from "on boot" in init.qcom.rc
     # ====================================================================
     # begin add for fast start modem when ue in factory lixiuzhen
-    echo related > /sys/bus/msm_subsys/devices/subsys3/restart_level
-    echo get > /sys/kernel/debug/msm_subsys/modem
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
+    write /sys/kernel/debug/msm_subsys/modem "get"
     #end
     write /sys/class/android_usb/android0/iSerial "0123456789"
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power

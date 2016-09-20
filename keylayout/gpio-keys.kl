@@ -25,14 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#device         mount point      fstype        [device2] [length=]
-
-/dev/block/bootdevice/by-name/system       /system         ext4    ro,barrier=1                                                    wait
-/dev/block/bootdevice/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
-/dev/block/bootdevice/by-name/cust         /cust           ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
-/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,length=-16384
-/dev/block/mmcblk1p1                       /sdcard         vfat    nosuid,nodev                                                    wait
-/dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/recovery     /recovery       emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/splash       /splash         emmc    defaults                                                        defaults 
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
+key 102   HOME
+key 528   FOCUS
+key 766   CAMERA

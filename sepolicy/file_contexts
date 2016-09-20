@@ -1,0 +1,81 @@
+# IR Blaster
+/dev/lirc[0-9]*                                                       u:object_r:lirc_device:s0
+
+# Fingerprint
+/dev/socket/fpce                                                      u:object_r:fpc_socket:s0
+/data/fpc(/.*)?                                                       u:object_r:fpc_data_file:s0
+/sys/devices/soc.0/fpc_fpc1020.*/hw_reset                             u:object_r:fpc_sysfs:s0
+/sys/devices/soc.0/fpc_fpc1020.*/irq                                  u:object_r:fpc_sysfs:s0
+/sys/devices/soc.0/fpc_fpc1020.*/wakeup_enable                        u:object_r:fpc_sysfs:s0
+
+#For Goodix fingerprint
+/dev/gf66xx-spi                                                       u:object_r:gx_fpd_device:s0
+/dev/ttyACM[0-9]*                                                     u:object_r:gx_fpd_device:s0
+/dev/goodix_fp*                                                       u:object_r:gx_fpd_device:s0
+
+/system/bin/gx_fpd                                                    u:object_r:gx_fpd_exec:s0
+
+# Goodix Fingerprint data
+/data/system/fingerprint(/.*)?                                        u:object_r:gx_fpd_data_file:s0
+/persist/data/gxfp(/.*)?                                              u:object_r:gx_fpd_data_file:s0
+
+# Goodix Fingerprint libs
+#/system/lib/libfpservice.so       u:object_r:gx_fpd_lib_file:s0
+#/system/lib/libfpalgorithm.so     u:object_r:gx_fpd_lib_file:s0
+#/system/lib/libfphal.so           u:object_r:gx_fpd_lib_file:s0
+#/system/lib/libfpnav.so           u:object_r:gx_fpd_lib_file:s0
+#/system/lib64/libfpservice.so     u:object_r:gx_fpd_lib_file:s0
+#/system/lib64/libfpalgorithm.so   u:object_r:gx_fpd_lib_file:s0
+#/system/lib64/libfphal.so         u:object_r:gx_fpd_lib_file:s0
+#/system/lib64/libfpnav.so         u:object_r:gx_fpd_lib_file:s0
+
+# Dev block nodes
+/dev/block/mmcblk0p2                                                  u:object_r:modem_efs_partition_device:s0
+/dev/block/mmcblk0p3                                                  u:object_r:ssd_device:s0
+/dev/block/mmcblk0p13                                                 u:object_r:modem_efs_partition_device:s0
+/dev/block/mmcblk0p14                                                 u:object_r:modem_efs_partition_device:s0
+/dev/block/mmcblk0p16                                                 u:object_r:modem_efs_partition_device:s0
+/dev/block/mmcblk0p27                                                 u:object_r:misc_partition:s0
+/dev/block/mmcblk0p33                                                 u:object_r:dip_device:s0
+/dev/block/mmcblk0p34                                                 u:object_r:mdtp_device:s0
+#/dev/hardwareinfo                                                     u:object_r:hardwareinfo_device:s0
+
+# Dev socket nodes
+###/dev/socket/wififtmd_server                                           u:object_r:wififtmd_socket:s0
+###/dev/socket/fpce                                                      u:object_r:fpce_socket:s0
+
+# System files
+###/system/bin/poweroffhandler                                           u:object_r:poweroffhandler_exec:s0
+###/system/vendor/bin/touch_fusion                                       u:object_r:touchfusion_exec:s0
+###/system/vendor/bin/LKCore                                             u:object_r:qti_logkit_exec:s0
+###/system/bin/wifi_ftmd                                                 u:object_r:wifi_ftmd_exec:s0
+###/system/bin/resize_ext4                                               u:object_r:resize_ext4_exec:s0
+###/system/bin/resize2fs                                                 u:object_r:resize_ext4_exec:s0
+
+# data files
+###/data/misc/qti-logkit(/.*)?                                           u:object_r:qti_logkit_priv_data_file:s0
+###/data/misc/qti-logkit/shared-public(/.*)?                             u:object_r:qti_logkit_pub_data_file:s0
+###/data/misc/qti-logkit/logdata(/.*)?                                   u:object_r:qti_logkit_pub_data_file:s0
+###/data/misc/qti-logkit/socket-privileged(/.*)?                         u:object_r:qti_logkit_priv_socket:s0
+###/data/misc/qti-logkit/socket-public(/.*)?                             u:object_r:qti_logkit_pub_socket:s0
+###/data/misc/wifi/nvbin(/.*)?                                           u:object_r:dynamic_nv_data_file:s0
+###/data/fpc(/.*)?                                                       u:object_r:fpce_socket:s0
+
+# persist files
+###/persist/speccfg(/.*)?                                                u:object_r:regionalization_file:s0
+###/persist/misc(/.*)?                                                   u:object_r:persist_misc_file:s0
+
+# cache files
+/sys/class/leds/red/brightness                                        u:object_r:sysfs_leds:s0
+/sys/devices/soc/78b6000.i2c/i2c-2/2-0045/leds/red/brightness         u:object_r:sysfs_leds:s0
+/sys/class/leds/green/brightness                                      u:object_r:sysfs_leds:s0
+/sys/devices/soc/78b6000.i2c/i2c-2/2-0045/leds/green/brightness       u:object_r:sysfs_leds:s0
+/sys/class/leds/blue/brightness                                       u:object_r:sysfs_leds:s0
+/sys/devices/soc/78b6000.i2c/i2c-2/2-0045/leds/blue/brightness        u:object_r:sysfs_leds:s0
+/sys/class/leds/infrared/brightness                                   u:object_r:sysfs_leds:s0
+/sys/devices/soc/soc:gpio-leds/leds/infrared/brightness               u:object_r:sysfs_leds:s0
+###/system/bin/coloradjust                                               u:object_r:coloradjust_exec:s0
+
+# debugfs
+/sys/kernel/debug                                                     u:object_r:debugfs:s0
+/firmware                                                             u:object_r:firmware_file:s0

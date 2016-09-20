@@ -337,10 +337,11 @@ on post-fs-data
     mkdir /data/misc/qti-logkit/logdata/ 2750 system shell
 
 service perfd /system/vendor/bin/perfd
-   class main
-   user root
-   disabled
-   socket perfd seqpacket 0666 root system
+    class main
+    user root
+    disabled
+    socket perfd seqpacket 0666 root system
+    writepid /dev/cpuset/system-background/tasks
 
 service iop /system/bin/iop
     class main
@@ -1118,10 +1119,10 @@ service fingerprintd /system/bin/fingerprintd
 
 
 service gx_fpd /system/bin/gx_fpd
-     class core
-     user root
-     group system system
-     disabled
+    class core
+    user root
+    group system system
+    disabled
 
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd

@@ -28,16 +28,22 @@ etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Hdmi_cal.acdb
 etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Headset_cal.acdb
 etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Speaker_cal.acdb
 
-
 # ADSP
 bin/adsprpcd
+vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
+vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 
-# Audio libraries
+# Audio
+etc/mixer_paths_qrd_sku1.xml
+###lib64/libaudioroute.so
+###lib64/libtinyalsa.so
+###lib/libaudioroute.so
 lib/libDiracAPI_SHARED.so
+###lib/libtinyalsa.so
 lib/soundfx/libdirac.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -381,17 +387,21 @@ vendor/lib/libdpmtcm.so
 
 # DRM
 bin/qseecomd
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libqisl.so
 vendor/lib64/lib-sec-disp.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
+vendor/lib/libGPreqcancel.so
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libqisl.so
 
 # Firmwares
 etc/firmware/DE.o.msm8937
@@ -419,6 +429,7 @@ etc/firmware/qtc800s.bin
 etc/firmware/qtc800s.cfg
 
 # Fingerprint
+bin/gx_fpd
 lib64/hw/fingerprint.default.so
 lib64/hw/fingerprint.goodix.so
 lib/hw/fingerprint.default.so
@@ -475,8 +486,13 @@ vendor/lib/libxtadapter.so
 vendor/lib/libxtwifi_ulp_adaptor.so
 
 # Graphics
+###lib64/hw/hwcomposer.msm8937.so
+###lib/hw/hwcomposer.msm8937.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libESXGLESv1_CM_adreno.so
+vendor/lib64/egl/libESXGLESv2_adreno.so
+vendor/lib64/egl/libESXEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
@@ -501,6 +517,9 @@ vendor/lib64/libscale.so
 vendor/lib64/libsd_sdk_display.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libESXGLESv1_CM_adreno.so
+vendor/lib/egl/libESXGLESv2_adreno.so
+vendor/lib/egl/libESXEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
@@ -566,6 +585,7 @@ vendor/lib/libQtiTether.so
 
 # Perf
 bin/msm_irqbalance
+vendor/etc/msm_irqbalance.conf
 vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
@@ -578,12 +598,17 @@ vendor/lib/libperipheral_client.so
 
 # Postprocessing
 vendor/bin/mm-pp-daemon
+vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libmm-als.so
 vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-qdcm-diag.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib/libmm-als.so
+
+# PowerHAL
+vendor/lib64/libqti-iop-client.so
+vendor/lib/libqti-iop-client.so
 
 # QMI
 bin/irsc_util
@@ -668,6 +693,7 @@ vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libsmwrapper.so
 
 # Thermal
+etc/thermal-engine.conf
 vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
@@ -681,8 +707,10 @@ bin/time_daemon
 vendor/lib64/libTimeService.so
 vendor/lib/libTimeService.so
 
-# WiFi firmware
+# WiFi
+###lib64/libwcnss_qmi.so
+etc/wifi/WCNSS_qcom_cfg.ini
 etc/firmware/wlan/prima/WCNSS_cfg.dat
-#etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+###etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
