@@ -570,7 +570,7 @@ service bridgemgrd /system/bin/bridgemgrd
 
 service port-bridge /system/bin/port-bridge
     class main
-    user radio system
+    user radio
     group radio system inet
     disabled
     oneshot
@@ -1112,15 +1112,14 @@ service poweroffhandler /system/bin/poweroffhandler
 service fingerprintd /system/bin/fingerprintd
     class late_start
     socket fpce stream 0666 system system
-    user  system
+    user system
     group system sdcard_rw
-    system system
     disabled
 
 
 service gx_fpd /system/bin/gx_fpd
-    class core
-    user root
+    class late_start
+    user system
     group system system
     disabled
 
