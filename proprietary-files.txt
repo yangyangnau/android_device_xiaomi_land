@@ -38,12 +38,8 @@ vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 
 # Audio
-etc/mixer_paths_qrd_sku1.xml
-###lib64/libaudioroute.so
-###lib64/libtinyalsa.so
-###lib/libaudioroute.so
+###etc/mixer_paths_qrd_sku1.xml
 lib/libDiracAPI_SHARED.so
-###lib/libtinyalsa.so
 lib/soundfx/libdirac.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -73,15 +69,25 @@ lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libqomx_core.so
 lib/libRecoFace.so
-vendor/lib/lib-imscamera.so
+###vendor/app/ims/lib/arm64/libimscamera_jni.so
+vendor/lib64/lib-imscamera.so
+vendor/lib64/libimscamera_jni.so
+vendor/lib64/libmmcamera2_frame_algorithm.so
+vendor/lib64/libmmcamera2_is.so
+vendor/lib64/libmmcamera2_q3a_core.so
+vendor/lib64/libmmcamera2_stats_algorithm.so
+vendor/lib64/libmmcamera_dbg.so
+vendor/lib64/libmmcamera_tintless_algo.so
+vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libarcsoft_beauty_shot.so
 vendor/lib/libFaceGrade.so
 vendor/lib/libFaceProc.so
 vendor/lib/libflash_pmic.so
-vendor/lib/libimscamera_jni.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
+vendor/lib/lib-imscamera.so
+vendor/lib/libimscamera_jni.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_dcrf.so
@@ -101,12 +107,23 @@ vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_csidtg.so
+vendor/lib/libmmcamera_dbg.so
 vendor/lib/libmmcamera_dcrf_lib.so
+vendor/lib/libmmcamera_dummyalgo.so
+vendor/lib/libmmcamera_dw9761b_2d_eeprom.so
+vendor/lib/libmmcamera_dw9761b_eeprom.so
+vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_util.so
 vendor/lib/libmmcamera_eztune_module.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera_imglib_faceproc_adspstub.so
+vendor/lib/libmmcamera_imx214.so
+vendor/lib/libmmcamera_imx230.so
+vendor/lib/libmmcamera_imx258.so
+vendor/lib/libmmcamera_imx258_gt24c16_eeprom.so
+vendor/lib/libmmcamera_imx298.so
 vendor/lib/libmmcamera_isp_abf40.so
 vendor/lib/libmmcamera_isp_bcc40.so
 vendor/lib/libmmcamera_isp_be_stats44.so
@@ -139,14 +156,52 @@ vendor/lib/libmmcamera_isp_scaler_encoder44.so
 vendor/lib/libmmcamera_isp_scaler_viewfinder44.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_sub_module.so
+vendor/lib/libmmcamera_isp_template.so
 vendor/lib/libmmcamera_isp_wb40.so
+vendor/lib/libmmcamera_le2464c_eeprom.so
+vendor/lib/libmmcamera_le2464c_master_eeprom.so
+vendor/lib/libmmcamera_llvd.so
+vendor/lib/libmmcamera_onsemi_cat24c16_eeprom.so
+vendor/lib/libmmcamera_onsemi_cat24c32_eeprom.so
 vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_ov13850.so
+vendor/lib/libmmcamera_ov13850_q13v06k.so
+vendor/lib/libmmcamera_ov13853_eeprom.so
+vendor/lib/libmmcamera_ov13853_q13853a.so
+vendor/lib/libmmcamera_ov2685.so
+vendor/lib/libmmcamera_ov2685_scv3b4035.so
+vendor/lib/libmmcamera_ov4688.so
+vendor/lib/libmmcamera_ov4688_eeprom.so
+vendor/lib/libmmcamera_ov5645.so
+vendor/lib/libmmcamera_ov5670.so
+vendor/lib/libmmcamera_ov5670_eeprom.so
+vendor/lib/libmmcamera_ov8858.so
+vendor/lib/libmmcamera_ov8865.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
+vendor/lib/libmmcamera_qtech_f3l8yam_eeprom.so
+vendor/lib/libmmcamera_qtech_f5670bq_eeprom.so
+vendor/lib/libmmcamera_qtech_q13853a_eeprom.so
+vendor/lib/libmmcamera_s5k3l8.so
+vendor/lib/libmmcamera_s5k3l8_eeprom.so
+vendor/lib/libmmcamera_s5k3l8_mono.so
+vendor/lib/libmmcamera_s5k3m2xm.so
+vendor/lib/libmmcamera_s5k3m2xx.so
+vendor/lib/libmmcamera_s5k5e8.so
+vendor/lib/libmmcamera_s5k5e8_eeprom.so
+vendor/lib/libmmcamera_sony_imx214_eeprom.so
+vendor/lib/libmmcamera_sony_imx298_eeprom.so
+vendor/lib/libmmcamera_sonyimx135_eeprom.so
+vendor/lib/libmmcamera_stillmore_lib.so
+vendor/lib/libmmcamera_sunny_8865_eeprom.so
+vendor/lib/libmmcamera_sunny_q13v06k_eeprom.so
+vendor/lib/libmmcamera_sunny_q5v41b_eeprom.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
+vendor/lib/libmmcamera_trueportrait_lib.so
+vendor/lib/libmmcamera_truly_cma481_eeprom.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_tuning_lookup.so
 vendor/lib/libmmcamera_ubifocus_lib.so
@@ -164,6 +219,7 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
+vendor/lib/mmi_camera.so
 
 # Camera actuators
 vendor/lib/libactuator_ad5816g.so
@@ -563,7 +619,7 @@ etc/firmware/a530v3_seq.fw2
 # IPA
 
 # Keystore
-vendor/lib64/hw/keystore.msm8937.so
+###vendor/lib64/hw/keystore.msm8937.so
 
 # Media
 vendor/lib/libI420colorconvert.so
@@ -615,6 +671,7 @@ bin/irsc_util
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
+vendor/lib64/libcneqmiutils.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -632,6 +689,7 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
+vendor/lib/libcneqmiutils.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
@@ -682,13 +740,14 @@ bin/sensors.qcom
 vendor/lib64/hw/activity_recognition.msm8937.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
-#vendor/lib64/libsensor_user_cal.so
+vendor/lib64/mmi_sensor.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
 vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-#vendor/lib/libsensor_user_cal.so
+vendor/lib/test_suite_no_sensor.so
+vendor/lib/mmi_sensor.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
 
