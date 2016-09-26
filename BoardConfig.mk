@@ -23,6 +23,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
+TARGET_CPU_CORTEX_A53 := true
 TARGET_CPU_VARIANT := generic
 
 TARGET_2ND_ARCH := arm
@@ -31,14 +32,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_CPU_CORTEX_A53 := true
-
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 TARGET_BOARD_SUFFIX := _64
-
 TARGET_USES_64_BIT_BINDER := true
-ENABLE_CPUSETS := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8937
@@ -62,9 +59,6 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := land
 
 # Audio
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
@@ -97,13 +91,17 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # Camera
+TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 # Force camera module to be compiled only in 32-bit mode on 64-bit systems
 # Once camera module can run in the native mode of the system (either
 # 32-bit or 64-bit), the following line should be deleted
-BOARD_QTI_CAMERA_32BIT_ONLY := true
-TARGET_USE_VENDOR_CAMERA_EXT := true
+###BOARD_QTI_CAMERA_32BIT_ONLY := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -111,6 +109,9 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+
+# CPUSETS
+ENABLE_CPUSETS := true
 
 # CNE
 BOARD_USES_QCNE := true
@@ -127,18 +128,14 @@ endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # Display
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
-TARGET_USES_OVERLAY := true
-USE_OPENGL_RENDERER := true
-
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-MAX_EGL_CACHE_SIZE := 2048*1024
-
-OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+TARGET_USES_NEW_ION_API := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -153,6 +150,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 10791377920 # 10791394304 - 16384
 
 # FM
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # GPS
@@ -182,7 +180,7 @@ TARGET_PER_MGR_ENABLED := true
 TARGET_POWERHAL_VARIANT := qcom
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
@@ -195,7 +193,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
 TARGET_RIL_VARIANT := caf
-PROTOBUF_SUPPORTED := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -204,22 +201,23 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+# Video
+TARGET_HAVE_SIGNED_VENUS_FW := true
+
 # Wifi
-WPA_SUPPLICANT_VERSION      := VER_0_8_X
-BOARD_HAS_QCOM_WLAN         := true
-BOARD_HAS_QCOM_WLAN_SDK     := true
-BOARD_WLAN_DEVICE           := qcwcn
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_DRIVER        := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-TARGET_PROVIDES_WCNSS_QMI   := true
-TARGET_USES_WCNSS_CTRL      := true
-TARGET_USES_QCOM_WCNSS_QMI  := true
-WIFI_DRIVER_FW_PATH_AP      := "ap"
-WIFI_DRIVER_FW_PATH_STA     := "sta"
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME     := "wlan"
+BOARD_HAS_QCOM_WLAN              := true
+BOARD_HAS_QCOM_WLAN_SDK          := true
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
+BOARD_WLAN_DEVICE                := qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+TARGET_USES_WCNSS_CTRL           := true
+WIFI_DRIVER_FW_PATH_AP           := "ap"
+WIFI_DRIVER_FW_PATH_STA          := "sta"
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # inherit from the proprietary version
 -include vendor/xiaomi/land/BoardConfigVendor.mk
