@@ -89,10 +89,10 @@ GOODIXFP_IMAGES := \
 
 GOODIXFP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(GOODIXFP_IMAGES)))
 $(GOODIXFP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-       @echo "GOODIXFP firmware link: $@"
-       @mkdir -p $(dir $@)
-       @rm -rf $@
-       $(hide) ln -sf /firmware/image/$(notdir $@) $@
+	@echo "GOODIXFP firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(GOODIXFP_SYMLINKS)
 
@@ -109,7 +109,8 @@ $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(ISDB_SYMLINKS)
 
-MBA_IMAGES := mba.mbn
+MBA_IMAGES := \
+    mba.mbn
 
 MBA_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MBA_IMAGES)))
 $(MBA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
