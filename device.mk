@@ -158,11 +158,6 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
-# IPACM
-PRODUCT_PACKAGES += \
-    IPACM_cfg.xml \
-    ipacm
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
