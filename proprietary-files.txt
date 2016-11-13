@@ -1251,7 +1251,7 @@ vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmmosal.so
-vendor/lib64/libvqzip.so
+#vendor/lib64/libvqzip.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAacDec.so
@@ -1346,7 +1346,6 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libqti-wl.so
 vendor/lib/libsmemlog.so
-vendor/lib/libvqzip.so
 
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
